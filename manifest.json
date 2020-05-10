@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "TravianPillage",
+  "description": "Do pillage List in Travian",
+  "version": "0.1",
+
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "popup.html"
+  },
+  "content_scripts": [
+        {
+        "matches": [
+            "https://ts20.travian.com/build.php?gid=16&tt=99"
+            ],
+        "js": ["discord.v11.min.js", "content.js"],
+        "run_at": "document_end"         // pay attention to this line
+        }
+    ],
+  "web_accessible_resources": ["content.js"],
+  "permissions": [
+  "storage",
+   "activeTab"
+   ]
+}
