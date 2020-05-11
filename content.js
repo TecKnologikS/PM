@@ -60,7 +60,7 @@ function run() {
 				var commande = commandes.shift();
 				chrome.storage.sync.set({"lstcommande":  JSON.stringify(commandes)});
 				currentTime();
-				setTimeout(launchCommande(commande), 15000);
+				setTimeout(launchCommande(commande), (15 + Math.floor(Math.random() * 10)) * 1000);
 			} else {
 				lastTime();
 			}
