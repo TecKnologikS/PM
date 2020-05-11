@@ -52,6 +52,7 @@ function lastTime() {
 }
 
 function run() {
+	console.log("run");
 	chrome.storage.sync.get("lstcommande", function(result){
 		if (result.lstcommande) {
 			var commandes = JSON.parse(result.lstcommande);
