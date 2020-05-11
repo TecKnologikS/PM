@@ -42,7 +42,7 @@ function lastTime() {
 			if (900000 < (Date.now() - result.lasttime)) {//900000
 				createActions();
 			} else {
-				reloadAfterXTime(120  + Math.floor(Math.random() * 20))
+				reloadAfterXTime(840  + Math.floor(Math.random() * 300))
 			}
 		} else {
 			currentTime();
@@ -60,7 +60,7 @@ function run() {
 				var commande = commandes.shift();
 				chrome.storage.sync.set({"lstcommande":  JSON.stringify(commandes)});
 				currentTime();
-				launchCommande(commande);
+				setTimeout(launchCommande(commande), 15000);
 			} else {
 				lastTime();
 			}
