@@ -39,10 +39,10 @@ function lastTime() {
 	console.log("lastime");
 	chrome.storage.sync.get("lasttime", function(result){
 		if (undefined !== result.lasttime) {
-			if (900000 < (Date.now() - result.lasttime)) {//900000
+			if (750000 < (Date.now() - result.lasttime)) {//900000
 				createActions();
 			} else {
-				reloadAfterXTime(800  + Math.floor(Math.random() * 300))
+				reloadAfterXTime(650  + Math.floor(Math.random() * 300))
 			}
 		} else {
 			currentTime();
