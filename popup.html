@@ -4,127 +4,26 @@
     <title>Travian pillage</title>
     <script src="popup.js"></script>
     <style>
-      .unit {
-        background-position-y: 0px;
-        width: 16px;
-      }
-      .egypt {
-        background-image: url(./img/v6_egypts2.gif);
-      }
-      .roman {
-        background-image: url(./img/v1_romans2.gif);
-      }
-      .german {
-        background-image: url(./img/v2_teutons2.gif);
-      }
-      .gaul {
-        background-image: url(./img/v3_gauls2.gif);
-      }
-      .huns {
-        background-image: url(./img/v7_huns2.gif);
-      }
-      .t1 {
-        background-position-x: 0px;
-      }
-      .t2 {
-        background-position-x: -19px;
-      }
-      .t3 {
-        background-position-x: -38px;
-      }
-      .t4 {
-        background-position-x: -57px;
-      }
-      .t5 {
-        background-position-x: -76px;
-      }
-      .t6 {
-        background-position-x: -95px;
-      }
-      .t7 {
-        background-position-x: -114px;
-      }
-      .t8 {
-        background-position-x: -233px;
+      body {
+        width: 500px;
       }
     </style>
   </head>
   <body>
-    <h2>Travian List</h2>
-    <label for="listid">Id de la liste</label>
-    <input type="text" id="listid" />
-    <select id="selectList">
-    </select>
-    <button id="checkList">Chercher listes</button>
+    <h2>Travian Pillage</h2>
+    <select id="selectList"></select>
+    <button id="addALL">Add ALL</button>
+    <button id="addIt">Ajouter cette liste</button><br>
 
-    <h3>Nombre de troupes</h3>
-    <label for="t1">
-      <img class="unit german t1" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit gaul t1" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit roman t1" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit egypt t1" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit huns t1" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="slave" src="https://ts20.travian.fr/img/x.gif" />
-    </label>
-    <input type="text" id="t1" /><br>
-    <label for="t2">
-      <img class="unit german t2" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit gaul t2" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit roman t2" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit egypt t2" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit huns t2" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="slave" src="https://ts20.travian.fr/img/x.gif" />
-    </label>
-    <input type="text" id="t2" /><br>
-    <label for="t3">
-      <img class="unit german t3" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit gaul t3" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit roman t3" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit egypt t3" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit huns t3" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="slave" src="https://ts20.travian.fr/img/x.gif" />
-    </label>
-    <input type="text" id="t3" /><br>
-    <label for="t4">
-      <img class="unit german t4" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit gaul t4" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit roman t4" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit egypt t4" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit huns t4" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="slave" src="https://ts20.travian.fr/img/x.gif" />
-    </label>
-    <input type="text" id="t4" /><br>
-    <label for="t5">
-      <img class="unit german t5" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit gaul t5" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit roman t5" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit egypt t5" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit huns t5" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="slave" src="https://ts20.travian.fr/img/x.gif" />
-    </label>
-    <input type="text" id="t5" /><br>
-    <label for="t6">
-      <img class="unit german t6" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit gaul t6" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit roman t6" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit egypt t6" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit huns t6" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="slave" src="https://ts20.travian.fr/img/x.gif" />
-    </label>
-    <input type="text" id="t6" /><br>
-    <label for="t7">
-      <img class="unit german t7" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit gaul t7" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit roman t7" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit egypt t7" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="unit huns t7" src="https://ts20.travian.fr/img/x.gif" />
-      <img class="slave" src="https://ts20.travian.fr/img/x.gif" />
-    </label>
-    <input type="text" id="t7" /><br>
+    <h3>Liste de pillage en cours</h3>
+    <ul id="listPillageList">
+      <li>Nom de la liste <button onclick="deleteList()">X</button></li>
+      <li>Nom de la liste</li>
+      <li>Nom de la liste</li>
+      <li>Nom de la liste</li>
+    </ul>
     <h3>Actions</h3>
-    <button id="checkPage">Lancer l'ajout</button><br>
-    <button id="getList">Getter</button><br>
-    <button id="getList2">Inactive</button><br>
-    <button id="clearButton">Kill it</button>
+    <button id="resetIt">Reset</button><br>
+    <button id="reloadIt">Reload</button>
   </body>
 </html>
