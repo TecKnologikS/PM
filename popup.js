@@ -7,6 +7,12 @@ chrome.storage.local.get("lists", function(result){
   showList();
 });
 
+chrome.storage.local.get("auto", function(result){
+  if(result.auto) {
+    document.getElementById('fullauto').checked = result.auto;
+  }
+});
+
 function createList(lstVillage) {
   pillageList = [];
 
@@ -64,6 +70,7 @@ function resetIt() {
   lists = [];
 	chrome.storage.local.set({"lstcommande":  JSON.stringify(actions)});
 	chrome.storage.local.set({"lists":  JSON.stringify(lists)});
+  chrome.storage.local.set({"auto":  false});
 }
 
 function startIt() {
@@ -77,6 +84,8 @@ function startIt() {
 		actions.push(commands.replace(/%1%/g, lists[i].id));
 	}
 	chrome.storage.local.set({"lstcommande":  JSON.stringify(actions)});
+  chrome.storage.local.set({"auto":  document.getElementById('fullauto').checked});
+  console.log(document.getElementById('fullauto').checked);
 }
 
 document.addEventListener('DOMContentLoaded', function() {

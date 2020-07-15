@@ -49,8 +49,12 @@ function lastTime() {
 			console.log(lists.length);
 			if (lists.length > 0) {
 				chrome.storage.local.get("lasttime", function(result){
-					currentTime();
-					createActions();
+					chrome.storage.local.get("auto", function(result){
+						if(result.auto) {
+							currentTime();
+							createActions();
+						}
+					});
 					//if (undefined !== result.lasttime) {
 					//	if (750000 < (Date.now() - result.lasttime)) {//900000
 					//		createActions();
